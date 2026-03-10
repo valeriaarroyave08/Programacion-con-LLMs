@@ -1,0 +1,40 @@
+Pregunta 2
+Clasificación con Support Vector Machine (SVM)
+El Problema
+Una empresa de telecomunicaciones quiere predecir si un cliente cancelará su suscripción (churn).
+El dataset contiene:
+•	X: variables como duración del contrato, número de llamadas al soporte, tipo de plan, etc.
+•	y: variable binaria donde:
+1 = el cliente canceló
+0 = el cliente sigue activo
+El equipo quiere entrenar un modelo de clasificación utilizando Support Vector Machines.
+
+Tu Misión
+Escribe una función llamada:
+clasificar_churn_svm(X, y)
+que realice lo siguiente:
+1.	Escale los datos utilizando StandardScaler.
+2.	Divida los datos en:
+•	80% entrenamiento
+• 20% prueba
+usando train_test_split(random_state=42).
+3.	Entrene un modelo SVC con:
+• kernel="rbf"
+4.	Realice predicciones sobre el conjunto de prueba.
+5.	Calcule las siguientes métricas:
+•	Accuracy
+•	F1 Score
+
+Requisitos
+Debes usar:
+•	StandardScaler
+•	SVC
+•	train_test_split
+•	accuracy_score
+•	f1_score
+
+Retorno
+{
+ "accuracy": float,
+ "f1_score": float
+}
