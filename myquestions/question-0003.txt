@@ -1,0 +1,29 @@
+Pregunta 3
+Selección de Variables con SelectKBest
+El Problema
+Un equipo de analítica financiera está trabajando con un dataset que contiene muchas variables económicas para predecir si una empresa tendrá alto o bajo riesgo financiero.
+El dataset contiene:
+•	X: múltiples variables numéricas.
+•	y: variable binaria indicando riesgo financiero.
+Debido al gran número de variables, desean seleccionar solo las más relevantes antes de entrenar un modelo.
+
+Tu Misión
+Escribe una función llamada:
+seleccionar_mejores_variables(X, y)
+que realice lo siguiente:
+1.	Aplique SelectKBest con la función f_classif.
+2.	Seleccione las 5 variables más importantes.
+3.	Devuelva:
+•	las variables seleccionadas
+•	el dataset reducido.
+
+Requisitos
+Debes usar:
+•	SelectKBest
+•	f_classif
+
+Retorno
+{
+ "variables_seleccionadas": list,
+ "X_reducido": pandas.DataFrame
+}
