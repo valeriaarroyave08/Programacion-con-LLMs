@@ -1,0 +1,25 @@
+Pregunta 4
+Detección de Anomalías con Isolation Forest
+El Problema
+Una empresa de pagos digitales quiere detectar transacciones fraudulentas en un dataset de operaciones financieras.
+Las transacciones fraudulentas suelen ser anomalías en comparación con el comportamiento normal de los usuarios.
+El dataset contiene:
+•	X: variables numéricas de cada transacción (monto, hora, ubicación, frecuencia, etc.)
+
+Tu Misión
+Escribe una función llamada:
+detectar_anomalias_transacciones(X)
+que realice lo siguiente:
+1.	Escale los datos usando StandardScaler.
+2.	Entrene un modelo IsolationForest con:
+contamination = 0.05
+random_state = 42
+3.	Prediga las anomalías en el dataset.
+En IsolationForest:
+-1 = anomalía
+1 = normal
+
+Requisitos
+Debes usar:
+•	StandardScaler
+•	IsolationForest
