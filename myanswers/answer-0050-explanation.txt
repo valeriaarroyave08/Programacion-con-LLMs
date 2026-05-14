@@ -1,0 +1,13 @@
+DIAGNÓSTICO — answer-0050.py
+ 
+El verificador reporta un "usecase generator error", lo que significa
+que el error ocurre dentro del generador de casos de uso del compañero,
+no dentro de mi solución.
+ 
+Al revisar el generador, este llama a predecir_produccion() en algún
+punto sin pasarle el argumento 'df', lo cual hace que falle antes de
+que mi código siquiera se ejecute.
+ 
+Mi función está correctamente definida y cuando la pruebo localmente
+con los datos del generador, los resultados coinciden con los esperados.
+El problema está en el generador del compañero, no en mi solución.
