@@ -1,16 +1,7 @@
 import pandas as pd
 
 
-def limpiar_datos(df=generar_caso_de_uso_limpiar_datos()[0]):
-    """
-    Limpia un DataFrame eliminando duplicados y columnas con >50% nulos.
-
-    Parámetros:
-        df : DataFrame original.
-
-    Retorna:
-        DataFrame limpio.
-    """
+def limpiar_datos(df):
     # 1. Eliminar filas duplicadas
     df_clean = df.drop_duplicates()
 
