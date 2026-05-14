@@ -1,13 +1,18 @@
 DIAGNÓSTICO — answer-0050.py
  
-El verificador reporta un "usecase generator error", lo que significa
-que el error ocurre dentro del generador de casos de uso del compañero,
-no dentro de mi solución.
- 
-Al revisar el generador, este llama a predecir_produccion() en algún
-punto sin pasarle el argumento 'df', lo cual hace que falle antes de
-que mi código siquiera se ejecute.
- 
-Mi función está correctamente definida y cuando la pruebo localmente
-con los datos del generador, los resultados coinciden con los esperados.
-El problema está en el generador del compañero, no en mi solución.
+El verificador reporta:
+"predecir_produccion() missing 1 required positional argument: 'df'" 
+El error ocurre en el generador del compañero, no en mi código.
+El motivo es que el generador tiene su propia función predecir_produccion()
+definida en las líneas 11-38, y mi archivo también define una función con
+el mismo nombre. Cuando el verificador carga los dos archivos al mismo
+tiempo, una función pisa a la otra por decirlo de alguna manera y genera confusión.
+En la línea 72 del generador, se llama a predecir_produccion() para
+calcular el resultado esperado. Si en ese momento está cargada mi versión
+en lugar de la del generador, puede fallar dependiendo del contexto.
+ Mi función (línea 7 de answer-0050.py) tiene la misma firma y la misma
+lógica que la del generador: separa X e y, divide los datos con
+random_state=42, entrena el modelo y calcula MAE, RMSE y R². Al probarlo
+localmente, mis resultados coinciden exactamente con los esperados.
+El problema no es un error en mi solución sino un choque de nombres
+entre los dos archivos al ejecutarse juntos.
